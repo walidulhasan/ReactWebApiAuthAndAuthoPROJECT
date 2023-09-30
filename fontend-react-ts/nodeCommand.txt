@@ -1,0 +1,15 @@
+npm create vite@latest
+//react
+//typescript
+
+
+
+npm i @hookform/resolvers       
+npm i axios chart.js
+npm i moment
+npm i react-chartjs-2
+npm i react-hook-form
+npm i react-hot-toast
+npm i react-icons
+npm i react-router-dom yup
+
