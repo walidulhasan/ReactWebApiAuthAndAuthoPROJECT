@@ -140,33 +140,46 @@ namespace Backend_WebApi.Core.Services
                 Address = registerDto.Address,
                 SecurityStamp = Guid.NewGuid().ToString(),
             };
-
-            var createUserResult = await _userManager.CreateAsync(newUser, registerDto.Password);
-            if (!createUserResult.Succeeded)
+            bool isRole = await _roleManager.RoleExistsAsync(StaticUserRoles.USER);
+            if (isRole)
             {
-                var errorString = "User Creation failed becase";
-                foreach (var error in createUserResult.Errors)
+                var createUserResult = await _userManager.CreateAsync(newUser, registerDto.Password);
+                if (!createUserResult.Succeeded)
                 {
-                    errorString += " # " + error.Description;
+                    var errorString = "User Creation failed becase";
+                    foreach (var error in createUserResult.Errors)
+                    {
+                        errorString += " # " + error.Description;
+                    }
+                    return new GeneralServiceResponseDto()
+                    {
+                        IsSucced = false,
+                        StatusCode = 400,
+                        Message = errorString
+                    };
                 }
+
+                // Add a Default USER Role to all users
+                await _userManager.AddToRoleAsync(newUser, StaticUserRoles.USER);
+                await _loggerService.SaveNewlog(newUser.UserName, "Registered to Website");
+
+                return new GeneralServiceResponseDto()
+                {
+                    IsSucced = true,
+                    StatusCode = 201,
+                    Message = "User Creaded Successfully"
+                };
+            }
+            else
+            {
                 return new GeneralServiceResponseDto()
                 {
                     IsSucced = false,
                     StatusCode = 400,
-                    Message = errorString
+                    Message = "Role can't Found"
                 };
             }
-
-            // Add a Default USER Role to all users
-            await _userManager.AddToRoleAsync(newUser, StaticUserRoles.USER);
-            await _loggerService.SaveNewlog(newUser.UserName, "Registered to Website");
-
-            return new GeneralServiceResponseDto()
-            {
-                IsSucced = true,
-                StatusCode = 201,
-                Message = "User Creaded Successfully"
-            };
+            
         }
 
         public async Task<GeneralServiceResponseDto> SeedRolesAsync()

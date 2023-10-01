@@ -81,3 +81,4 @@ D:\ReactWebApiAuthAndAuthoPROJECT\Backend-WebApi\Backend-WebApi\obj\Debug\net7.0
 D:\ReactWebApiAuthAndAuthoPROJECT\Backend-WebApi\Backend-WebApi\obj\Debug\net7.0\Backend-WebApi.pdb
 D:\ReactWebApiAuthAndAuthoPROJECT\Backend-WebApi\Backend-WebApi\obj\Debug\net7.0\Backend-WebApi.genruntimeconfig.cache
 D:\ReactWebApiAuthAndAuthoPROJECT\Backend-WebApi\Backend-WebApi\obj\Debug\net7.0\ref\Backend-WebApi.dll
+D:\ReactWebApiAuthAndAuthoPROJECT\Backend-WebApi\Backend-WebApi\obj\Debug\net7.0\Backend-WebApi.sourcelink.json
