@@ -3551,23 +3551,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Robintex\\.nuget\\packages\\": {},
+    "C:\\Users\\Iyamin\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ReactWebApiAuthAndAuthoPROJECT\\Backend-WebApi\\Backend-WebApi\\Backend-WebApi.csproj",
+      "projectUniqueName": "D:\\MYpRoject\\ReactWebApiAuthAndAuthoPROJECT\\Backend-WebApi\\Backend-WebApi\\Backend-WebApi.csproj",
       "projectName": "Backend-WebApi",
-      "projectPath": "D:\\ReactWebApiAuthAndAuthoPROJECT\\Backend-WebApi\\Backend-WebApi\\Backend-WebApi.csproj",
-      "packagesPath": "C:\\Users\\Robintex\\.nuget\\packages\\",
-      "outputPath": "D:\\ReactWebApiAuthAndAuthoPROJECT\\Backend-WebApi\\Backend-WebApi\\obj\\",
+      "projectPath": "D:\\MYpRoject\\ReactWebApiAuthAndAuthoPROJECT\\Backend-WebApi\\Backend-WebApi\\Backend-WebApi.csproj",
+      "packagesPath": "C:\\Users\\Iyamin\\.nuget\\packages\\",
+      "outputPath": "D:\\MYpRoject\\ReactWebApiAuthAndAuthoPROJECT\\Backend-WebApi\\Backend-WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Robintex\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Iyamin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3587,9 +3587,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "default"
       }
     },
     "frameworks": {
@@ -3642,7 +3639,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-preview.5.23303.2\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

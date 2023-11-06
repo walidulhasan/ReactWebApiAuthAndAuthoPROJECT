@@ -107,12 +107,17 @@ builder.Services.AddSwaggerGen(options =>
 
 var app = builder.Build();
 
+//my own property
+app.UseDeveloperExceptionPage();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseSwagger();
+app.UseSwaggerUI();
 app.UseCors(options =>
 {
     options

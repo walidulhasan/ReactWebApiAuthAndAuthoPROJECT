@@ -2,7 +2,6 @@
 using Backend_WebApi.Core.Dtos.Message;
 using Backend_WebApi.Core.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Backend_WebApi.Controllers;
@@ -22,7 +21,7 @@ public class MessageController : ControllerBase
     [HttpPost]
     [Route("create")]
     [Authorize]
-    public async Task<IActionResult> CreateNewMessage([FromBody]CreateMessageDto createMessageDto)
+    public async Task<IActionResult> CreateNewMessage([FromBody] CreateMessageDto createMessageDto)
     {
         var result = await _messageService.CreateNewMessageAsync(User, createMessageDto);
         if (result.IsSucced)
@@ -30,6 +29,7 @@ public class MessageController : ControllerBase
             return Ok(result.Message);
         }
         return StatusCode(result.StatusCode, result.Message);
+
     }
     [HttpGet]
     [Route("mine")]

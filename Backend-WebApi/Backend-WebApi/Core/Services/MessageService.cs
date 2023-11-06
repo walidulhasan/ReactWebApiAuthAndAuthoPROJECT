@@ -23,7 +23,7 @@ public class MessageService : IMessageService
 
     public async Task<GeneralServiceResponseDto> CreateNewMessageAsync(ClaimsPrincipal User, CreateMessageDto createMessageDto)
     {
-        if (User.Identity.Name == createMessageDto.ReciverUserName)
+        if (User.Identity.Name == createMessageDto.ReceiverUserName)
         {
             return new GeneralServiceResponseDto()
             {
@@ -32,7 +32,7 @@ public class MessageService : IMessageService
                 Message = "Sender and Reciver can not be same"
             };
         }
-        var isReceiverUserNameValid = _userManager.Users.Any(x => x.UserName == createMessageDto.ReciverUserName);
+        var isReceiverUserNameValid = _userManager.Users.Any(x => x.UserName == createMessageDto.ReceiverUserName);
         if (!isReceiverUserNameValid)
         {
             return new GeneralServiceResponseDto()
@@ -46,7 +46,7 @@ public class MessageService : IMessageService
         Message newMessage = new()
         {
             SenderUserName = User.Identity.Name,
-            ReceiverUserName = createMessageDto.ReciverUserName,
+            ReceiverUserName = createMessageDto.ReceiverUserName,
             Text = createMessageDto.Text
         };
         await _context.Messages.AddAsync(newMessage);

@@ -32,7 +32,7 @@ public class LogService : ILogService
             {
                 CreatedAt =x.CreatedAt,
                 Description = x.Description,
-                UsrName = x.UserName
+                UserName = x.UserName
             })
             .OrderByDescending(x=>x.CreatedAt)
             .ToListAsync();
@@ -47,7 +47,7 @@ public class LogService : ILogService
             {
                 CreatedAt = x.CreatedAt,
                 Description = x.Description,
-                UsrName = x.UserName
+                UserName = x.UserName
             })
             .OrderByDescending(x => x.CreatedAt)
             .ToListAsync();
